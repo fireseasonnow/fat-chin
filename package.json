@@ -1,0 +1,54 @@
+{
+  "name": "fat-chin",
+  "version": "1.0.0",
+  "description": "Pink Floyd discography in React flavour",
+  "scripts": {
+    "start": "npx webpack-serve ./webpack.config.js",
+    "build": "rm -rf dist && npx webpack",
+    "test": "npx jest",
+    "flow": "npx flow check",
+    "eslint": "npx eslint ./src/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whitebackdoor/fat-chin.git"
+  },
+  "author": "Adam Michalowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whitebackdoor/fat-chin/issues"
+  },
+  "homepage": "https://github.com/whitebackdoor/fat-chin#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "axios": "^0.18.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "enzyme": "^3.5.0",
+    "enzyme-adapter-react-16": "^1.3.0",
+    "enzyme-to-json": "^3.3.4",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.79.1",
+    "jest": "^23.5.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-test-renderer": "^16.4.2",
+    "redux": "^4.0.0",
+    "webpack": "^4.17.1",
+    "webpack-command": "^0.4.1",
+    "webpack-serve": "^2.0.2"
+  },
+  "dependencies": {}
+}

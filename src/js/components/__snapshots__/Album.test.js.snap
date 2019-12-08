@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Album /> should render an album with tracks and 'Hide tracks' text 1`] = `
+<li
+  className="album__item"
+>
+  <h1
+    className="album__name"
+  >
+    Hello
+     (
+    1984
+    )
+  </h1>
+  <div
+    className="album__cover-wrapper"
+  >
+    <img
+      alt="'Hello' album cover"
+      className="album__img"
+      src="url"
+    />
+    <div
+      className="album__overlay"
+    >
+      <button
+        className="album__overlay-item qa-album__overlay-item--tracks-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Hide tracks
+      </button>
+      <button
+        className="album__overlay-item qa-album__overlay-item--zoom-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Zoom cover
+      </button>
+    </div>
+  </div>
+  <ul
+    className="album__tracks"
+  >
+    <track
+      key="0"
+      name="blah"
+      number={1}
+    />
+    <track
+      key="1"
+      name="blah-blah"
+      number={2}
+    />
+  </ul>
+</li>
+`;
+
+exports[`<Album /> should render an album without tracks and 'Show tracks' text 1`] = `
+<li
+  className="album__item"
+>
+  <h1
+    className="album__name"
+  >
+    Hello
+     (
+    1984
+    )
+  </h1>
+  <div
+    className="album__cover-wrapper"
+  >
+    <img
+      alt="'Hello' album cover"
+      className="album__img"
+      src="url"
+    />
+    <div
+      className="album__overlay"
+    >
+      <button
+        className="album__overlay-item qa-album__overlay-item--tracks-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Show tracks
+      </button>
+      <button
+        className="album__overlay-item qa-album__overlay-item--zoom-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Zoom cover
+      </button>
+    </div>
+  </div>
+  <ul
+    className="album__tracks"
+  />
+</li>
+`;
