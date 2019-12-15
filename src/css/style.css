@@ -16,6 +16,7 @@ body {
     grid-gap: 20px;
     max-width: 1224px;
     margin: 0 auto;
+    padding-left: 0;
 }
 
 .album__list--blocked {
@@ -23,33 +24,10 @@ body {
     overflow: hidden;
 }
 
-.album__img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    filter: grayscale(1);
-    transition: filter ease-in-out 250ms;
-}
-
-.album__item:hover .album__img {
-    filter: grayscale(0);
-    transition: filter ease-in-out 250ms;
-}
-
-.album__name {
-    margin: 0;
-    font-size: 1em;
-    text-align: center;
-}
-
-.album__item,
-.album__track {
-    list-style: none;
-}
-
 .album__track {
     position: relative;
     cursor: pointer;
+    list-style: none;
 }
 
 .album__track:hover::after {
@@ -70,51 +48,6 @@ body {
     cursor: inherit;
     outline: none;
     text-align: left;
-}
-
-.album__cover-wrapper {
-    position: relative;
-}
-
-.album__overlay {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.7);
-    opacity: 0;
-    transition: opacity ease-in-out 250ms;
-}
-
-.album__cover-wrapper:hover .album__overlay {
-    opacity: 1;
-    transition: opacity ease-in-out 250ms;
-}
-
-.album__overlay-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #000;
-    background: rgba(255, 255, 255, 0.05);
-    cursor: pointer;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1em;
-    outline: none;
-    border: 0;
-}
-
-.album__overlay-item:first-child,
-.album__overlay-item:first-child:active {
-    border-right: 1px solid #999;
-}
-
-.album__list,
-.album__tracks {
-    padding-left: 0;
 }
 
 .album__toggle-link {

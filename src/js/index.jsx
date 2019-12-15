@@ -12,7 +12,7 @@ function renderApp() {
         <Provider store={store}>
             <App
                 state={store.getState()}
-                dispatch={store.dispatch} 
+                dispatch={store.dispatch}
             />
         </Provider>,
         document.getElementById('root'),

@@ -53,7 +53,7 @@ describe('<Album />', () => {
         });
 
         const event = { target: { value: 'test' } };
-        wrapper.find('.qa-album__overlay-item--tracks-btn').simulate('click', event.target.value, 4);
+        wrapper.find('Album__OverlayItem:first-child').simulate('click', event.target.value, 4);
 
         expect(tracksVisibilityHandler).toHaveBeenCalledWith(event.target.value, 4);
     });
@@ -67,7 +67,7 @@ describe('<Album />', () => {
         });
 
         const event = { target: { value: 'test' } };
-        wrapper.find('.qa-album__overlay-item--zoom-btn').simulate('click', event.target.value, 3);
+        wrapper.find('Album__OverlayItem:last-child').simulate('click', event.target.value, 3);
 
         expect(coverZoomHandler).toHaveBeenCalledWith(event.target.value, 3);
     });
