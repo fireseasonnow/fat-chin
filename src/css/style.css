@@ -24,32 +24,6 @@ body {
     overflow: hidden;
 }
 
-.album__track {
-    position: relative;
-    cursor: pointer;
-    list-style: none;
-}
-
-.album__track:hover::after {
-    content: 'lyrics';
-    font-size: 10px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-.album__track-btn {
-    background: none;
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    border: 0;
-    padding: 0;
-    cursor: inherit;
-    outline: none;
-    text-align: left;
-}
-
 .album__toggle-link {
     text-decoration: none;
     color: #fff;

@@ -36,7 +36,7 @@ describe('<Track />', () => {
         });
 
         const event = { target: { value: 'test' } };
-        wrapper.find('.qa-album__track-btn').simulate('click', event.target.value, 'Hello');
+        wrapper.find('Track__Button').simulate('click', event.target.value, 'Hello');
 
         expect(showLyricsHandler).toHaveBeenCalledWith(event.target.value, 'Hello');
     });

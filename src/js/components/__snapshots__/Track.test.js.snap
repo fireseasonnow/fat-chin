@@ -1,17 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Track /> should render a track with name and number 1`] = `
-<li
-  className="album__track"
->
-  <button
-    className="album__track-btn qa-album__track-btn"
+<Track__Item>
+  <Track__Button
     onClick={[Function]}
     type="button"
   >
     1
     . 
     Hello
-  </button>
-</li>
+  </Track__Button>
+</Track__Item>
 `;
