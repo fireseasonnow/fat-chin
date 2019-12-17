@@ -42,7 +42,7 @@ describe('<Lyrics />', () => {
             text: '',
         });
 
-        const check = wrapper.find('.qa-lyrics__text').contains('Instrumental');
+        const check = wrapper.find('Lyrics__Text').contains('Instrumental');
 
         expect(check).toBeTruthy();
     });
@@ -55,7 +55,7 @@ describe('<Lyrics />', () => {
         });
 
         const event = { target: { value: 'test' } };
-        wrapper.find('.qa-lyrics__close-btn').simulate('click', event.target.value);
+        wrapper.find('Lyrics__Close').simulate('click', event.target.value);
 
         expect(hideLyricsHandler).toHaveBeenCalledWith(event.target.value);
     });

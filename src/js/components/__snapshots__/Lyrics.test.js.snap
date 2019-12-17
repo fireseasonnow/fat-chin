@@ -1,47 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Lyrics /> should render lyrics with name and text 1`] = `
-<div
-  className="cover-zoom__inner lyrics__inner"
->
-  <button
-    className="cover-zoom__close lyrics__close-btn qa-lyrics__close-btn"
+<Lyrics__Inner>
+  <Lyrics__Close
     onClick={[Function]}
     type="button"
   />
-  <p
-    className="lyrics__text qa-lyrics__text"
-  >
-    <span
-      className="lyrics__heading"
-    >
+  <Lyrics__Text>
+    <Lyrics__Heading>
       Hello
-    </span>
+    </Lyrics__Heading>
      
     Lorem Ipsum
-  </p>
-</div>
+  </Lyrics__Text>
+</Lyrics__Inner>
 `;
 
 exports[`<Lyrics /> when lyrics are missing should render lyrics with name and "Instrumental" text 1`] = `
-<div
-  className="cover-zoom__inner lyrics__inner"
->
-  <button
-    className="cover-zoom__close lyrics__close-btn qa-lyrics__close-btn"
+<Lyrics__Inner>
+  <Lyrics__Close
     onClick={[Function]}
     type="button"
   />
-  <p
-    className="lyrics__text qa-lyrics__text"
-  >
-    <span
-      className="lyrics__heading"
-    >
+  <Lyrics__Text>
+    <Lyrics__Heading>
       Hello
-    </span>
+    </Lyrics__Heading>
      
     Instrumental
-  </p>
-</div>
+  </Lyrics__Text>
+</Lyrics__Inner>
 `;

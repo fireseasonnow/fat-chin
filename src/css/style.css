@@ -103,23 +103,3 @@ body {
 .cover-zoom__img {
     align-self: center;
 }
-
-.lyrics__inner {
-    overflow-y: scroll;
-}
-
-.lyrics__close-btn {
-    align-self: start;
-    top: 42px;
-}
-
-.lyrics__text {
-    margin: 50px 0;
-    white-space: pre-line;
-}
-
-.lyrics__heading {
-    display: block;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
