@@ -36,7 +36,7 @@ describe('<CoverZoom />', () => {
         });
 
         const event = { target: { value: 'test' } };
-        wrapper.find('.qa-cover-zomm__close').simulate('click', event.target.value, 7);
+        wrapper.find('CoverZoom__Close').simulate('click', event.target.value, 7);
 
         expect(coverZoomHandler).toHaveBeenCalledWith(event.target.value, 7);
     });
