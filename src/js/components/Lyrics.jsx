@@ -15,6 +15,8 @@ const lyrics = (props: Props) => (
     </Inner>
 );
 
+export default lyrics;
+
 const Inner = styled.div`
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -72,5 +74,3 @@ const Heading = styled.span`
     text-transform: uppercase;
     margin-bottom: 20px;
 `;
-
-export default lyrics;
