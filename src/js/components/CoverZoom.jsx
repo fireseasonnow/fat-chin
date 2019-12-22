@@ -1,17 +1,9 @@
-// @flow
 import React from 'react';
 import styled from 'styled-components'
 
-type Props = {
-    albumIndex: number,
-    name: string,
-    coverUrl: string,
-    coverZoomHandler: (e: Object, index: number) => void
-};
-
-const coverZoom = (props: Props) => (
+const coverZoom = props => (
     <Inner>
-        <Close onClick={(e) => props.coverZoomHandler(e, props.albumIndex)} type="button" />
+        <Close onClick={e => props.coverZoomHandler(e, props.albumIndex)} type="button" />
         <Img src={props.coverUrl} alt={`'${props.name}' album cover`} />
     </Inner>
 );

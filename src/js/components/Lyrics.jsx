@@ -1,16 +1,9 @@
-// @flow
 import React from 'react';
 import styled from 'styled-components'
 
-type Props = {
-    name: string,
-    text: string,
-    hideLyricsHandler: (e: Object) => void
-};
-
-const lyrics = (props: Props) => (
+const lyrics = props => (
     <Inner>
-        <Close onClick={(e) => props.hideLyricsHandler(e)} type="button"></Close>
+        <Close onClick={e => props.hideLyricsHandler(e)} type="button"></Close>
         <Text><Heading>{props.name}</Heading> {props.text ? props.text : 'Instrumental'}</Text>
     </Inner>
 );

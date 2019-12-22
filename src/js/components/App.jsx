@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react';
 import Album from './Album';
 import CoverZoom from './CoverZoom';
@@ -7,12 +6,7 @@ import * as actionCreators from '../actions';
 import axios from 'axios';
 import styled, { css } from 'styled-components';
 
-type Props = {
-    state: Object,
-    dispatch: (Function) => void
-};
-
-export default class App extends Component<Props> {
+export default class App extends Component {
     componentDidMount() {
         const { dispatch } = this.props;
 
@@ -21,21 +15,21 @@ export default class App extends Component<Props> {
             .catch(error => console.log(error));
     }
 
-    tracksVisibilityHandler = (e: SyntheticMouseEvent<HTMLButtonElement>, index: number) => {
+    tracksVisibilityHandler = (e, index) => {
         const { dispatch } = this.props;
         e.stopPropagation();
 
         dispatch(actionCreators.updateTracksVisibility(index));
     }
 
-    coverZoomHandler = (e: SyntheticMouseEvent<HTMLButtonElement>, index: number) => {
+    coverZoomHandler = (e, index) => {
         const { dispatch } = this.props;
         e.stopPropagation();
 
         dispatch(actionCreators.updateCoverZoom(index));
     }
 
-    showLyricsHandler = (e: SyntheticMouseEvent<HTMLButtonElement>, name: string) => {
+    showLyricsHandler = (e, name) => {
         const { dispatch } = this.props;
         e.stopPropagation();
 
@@ -44,7 +38,7 @@ export default class App extends Component<Props> {
             .catch(error => console.log(error));
     }
 
-    hideLyricsHandler = (e: SyntheticMouseEvent<HTMLButtonElement>) => {
+    hideLyricsHandler = e => {
         const { dispatch } = this.props;
         e.stopPropagation();
 
@@ -93,7 +87,7 @@ export default class App extends Component<Props> {
         );
     }
 
-    renderLyrics = (name: string, text: string) => (
+    renderLyrics = (name, text) => (
         <Lyrics
             name={name}
             text={text}

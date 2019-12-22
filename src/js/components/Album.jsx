@@ -1,21 +1,8 @@
-// @flow
 import React from 'react';
 import Track from './Track';
 import styled from 'styled-components'
 
-type Props = {
-    index: number,
-    name: string,
-    coverUrl: string,
-    year: number,
-    tracks: Array<string>,
-    tracksVisible: boolean,
-    tracksVisibilityHandler: (e: Object, index: number) => void,
-    coverZoomHandler: (e: Object, index: number) => void,
-    showLyricsHandler: (e: Object, name: string) => void
-};
-
-const album = (props: Props) => {
+const album = props => {
     const { name, coverUrl, year, tracks, tracksVisible, index, tracksVisibilityHandler, coverZoomHandler, showLyricsHandler } = props;
     const tracksVisiblityText = tracksVisible ? 'Hide tracks' : 'Show tracks';
 
@@ -25,8 +12,8 @@ const album = (props: Props) => {
             <CoverWrapper>
                 <CoverImg src={coverUrl} alt={`'${name}' album cover`} />
                 <Overlay>
-                    <OverlayItem onClick={(e) => tracksVisibilityHandler(e, index)} type="button">{tracksVisiblityText}</OverlayItem>
-                    <OverlayItem onClick={(e) => coverZoomHandler(e, index)} type="button">Zoom cover</OverlayItem>
+                    <OverlayItem onClick={e => tracksVisibilityHandler(e, index)} type="button">{tracksVisiblityText}</OverlayItem>
+                    <OverlayItem onClick={e => coverZoomHandler(e, index)} type="button">Zoom cover</OverlayItem>
                 </Overlay>
             </CoverWrapper>
 

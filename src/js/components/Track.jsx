@@ -1,16 +1,9 @@
-// @flow
 import React from 'react';
 import styled from 'styled-components'
 
-type Props = {
-    number: number,
-    name: string,
-    showLyricsHandler: (e: Object, name: string) => void
-};
-
-const track = (props: Props) => (
+const track = props => (
     <Item>
-        <Button type="button" onClick={(e) => props.showLyricsHandler(e, props.name)}>
+        <Button type="button" onClick={e => props.showLyricsHandler(e, props.name)}>
             {props.number}. {props.name}
         </Button>
     </Item>
