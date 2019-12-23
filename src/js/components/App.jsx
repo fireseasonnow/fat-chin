@@ -4,7 +4,7 @@ import CoverZoom from './CoverZoom';
 import Lyrics from './Lyrics';
 import * as actionCreators from '../actions';
 import axios from 'axios';
-import styled, { css } from 'styled-components';
+import styled, { css, createGlobalStyle } from 'styled-components';
 
 export default class App extends Component {
     componentDidMount() {
@@ -100,6 +100,7 @@ export default class App extends Component {
 
         return (
             <>
+                <GlobalStyle />
                 <AlbumList
                     isCoverZoom={isCoverZoom}
                     areLyrics={areLyrics}
@@ -118,6 +119,20 @@ export default class App extends Component {
         );
     }
 }
+
+const GlobalStyle = createGlobalStyle`
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        font-family: 'Oswald', sans-serif;
+        margin: 0;
+        background: #000;
+        color: #fff;
+    }
+`
 
 const AlbumList = styled.ul`
     display: grid;
