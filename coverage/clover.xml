@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1577303016927" clover="3.2.0">
+  <project timestamp="1577303016927" name="All files">
+    <metrics statements="32" coveredstatements="32" conditionals="6" coveredconditionals="6" methods="11" coveredmethods="11" elements="49" coveredelements="49" complexity="0" loc="32" ncloc="32" packages="1" files="4" classes="4"/>
+    <file name="Album.jsx" path="/Users/insided/Desktop/github/fat-chin/src/js/Album.jsx">
+      <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="11" type="stmt"/>
+      <line num="8" count="11" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="25" count="4" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="49" count="1" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="66" count="1" type="stmt"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="87" count="1" type="stmt"/>
+    </file>
+    <file name="CoverZoom.jsx" path="/Users/insided/Desktop/github/fat-chin/src/js/CoverZoom.jsx">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="5" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="57" count="1" type="stmt"/>
+    </file>
+    <file name="Lyrics.jsx" path="/Users/insided/Desktop/github/fat-chin/src/js/Lyrics.jsx">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="9" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+    </file>
+    <file name="Track.jsx" path="/Users/insided/Desktop/github/fat-chin/src/js/Track.jsx">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="5" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+    </file>
+  </project>
+</coverage>

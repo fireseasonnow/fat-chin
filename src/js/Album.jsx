@@ -1,10 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 import Track from './Track';
-import styled from 'styled-components'
 
-const album = props => {
-    const { name, coverUrl, year, tracks, tracksVisible, index, tracksVisibilityHandler, coverZoomHandler, showLyricsHandler } = props;
-    const tracksVisiblityText = tracksVisible ? 'Hide tracks' : 'Show tracks';
+const Album = props => {
+    const { name, coverUrl, year, tracks, tracksVisible, index, showTracksHandler, hideTracksHandler, showCoverZoomHandler, showLyricsHandler } = props;
 
     return (
         <Item>
@@ -12,26 +11,30 @@ const album = props => {
             <CoverWrapper>
                 <CoverImg src={coverUrl} alt={`'${name}' album cover`} />
                 <Overlay>
-                    <OverlayItem onClick={e => tracksVisibilityHandler(e, index)} type="button">{tracksVisiblityText}</OverlayItem>
-                    <OverlayItem onClick={e => coverZoomHandler(e, index)} type="button">Zoom cover</OverlayItem>
+                    {tracksVisible ?
+                        <OverlayItem onClick={() => hideTracksHandler(index)} type='button'>Hide tracks</OverlayItem>
+                        :
+                        <OverlayItem onClick={() => showTracksHandler(index)} type='button'>Show tracks</OverlayItem>
+                    }
+                    <OverlayItem onClick={() => showCoverZoomHandler(index)} type='button'>Zoom cover</OverlayItem>
                 </Overlay>
             </CoverWrapper>
 
             <Tracks>
-                {tracksVisible ? tracks.map((track, index) => (
+                {tracksVisible && tracks.map((track, index) => (
                     <Track
                         key={parseInt(index, 10)}
                         number={parseInt(index) + 1}
                         name={track}
                         showLyricsHandler={showLyricsHandler}>
                     </Track>
-                )) : null}
+                ))}
             </Tracks>
         </Item>
     );
 };
 
-export default album;
+export default Album;
 
 const Item = styled.li`
     list-style: none;

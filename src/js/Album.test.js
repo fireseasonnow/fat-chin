@@ -38,37 +38,53 @@ describe('<Album />', () => {
             tracks: [
                 'blah',
                 'blah-blah'
-            ],
+            ]
         });
 
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should fire tracksVisibilityHandler when clicked on a tracks button', () => {
-        const tracksVisibilityHandler = jest.fn();
+    test('should fire showTracksHandler when clicked on a tracks button', () => {
+        const showTracksHandler = jest.fn();
 
         wrapper.setProps({
             index: 4,
-            tracksVisibilityHandler,
+            showTracksHandler
         });
 
-        const event = { target: { value: 'test' } };
-        wrapper.find('Album__OverlayItem:first-child').simulate('click', event.target.value, 4);
+        wrapper.find('Album__OverlayItem:first-child').simulate('click');
 
-        expect(tracksVisibilityHandler).toHaveBeenCalledWith(event.target.value, 4);
+        expect(showTracksHandler).toHaveBeenCalledWith(4);
     });
 
-    test('should fire coverZoomHandler when clicked on a zoom button', () => {
-        const coverZoomHandler = jest.fn();
+    test('should fire hideTracksHandler when clicked on a tracks button', () => {
+        const hideTracksHandler = jest.fn();
+
+        wrapper.setProps({
+            index: 4,
+            hideTracksHandler,
+            tracksVisible: true,
+            tracks: [
+                'blah',
+                'blah-blah'
+            ]
+        });
+
+        wrapper.find('Album__OverlayItem:first-child').simulate('click');
+
+        expect(hideTracksHandler).toHaveBeenCalledWith(4);
+    });
+
+    test('should fire showCoverZoomHandler when clicked on a zoom button', () => {
+        const showCoverZoomHandler = jest.fn();
 
         wrapper.setProps({
             index: 3,
-            coverZoomHandler,
+            showCoverZoomHandler
         });
 
-        const event = { target: { value: 'test' } };
-        wrapper.find('Album__OverlayItem:last-child').simulate('click', event.target.value, 3);
+        wrapper.find('Album__OverlayItem:last-child').simulate('click');
 
-        expect(coverZoomHandler).toHaveBeenCalledWith(event.target.value, 3);
+        expect(showCoverZoomHandler).toHaveBeenCalledWith(3);
     });
 });

@@ -1,15 +1,15 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const track = props => (
+const Track = props => (
     <Item>
-        <Button type="button" onClick={e => props.showLyricsHandler(e, props.name)}>
+        <Button onClick={() => props.showLyricsHandler(props.name)} type='button'>
             {props.number}. {props.name}
         </Button>
     </Item>
 );
 
-export default track;
+export default Track;
 
 const Item = styled.li`
     position: relative;

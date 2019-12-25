@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const lyrics = props => (
     <Inner>
-        <Close onClick={e => props.hideLyricsHandler(e)} type="button"></Close>
+        <Close onClick={() => props.hideLyricsHandler()} type='button'></Close>
         <Text><Heading>{props.name}</Heading> {props.text ? props.text : 'Instrumental'}</Text>
     </Inner>
 );

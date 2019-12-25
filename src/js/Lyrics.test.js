@@ -54,9 +54,8 @@ describe('<Lyrics />', () => {
             hideLyricsHandler,
         });
 
-        const event = { target: { value: 'test' } };
-        wrapper.find('Lyrics__Close').simulate('click', event.target.value);
+        wrapper.find('Lyrics__Close').simulate('click');
 
-        expect(hideLyricsHandler).toHaveBeenCalledWith(event.target.value);
+        expect(hideLyricsHandler).toHaveBeenCalled();
     });
 });
