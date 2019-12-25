@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Track = props => (
+const Track = ({ showLyricsHandler, name, number }) => (
     <Item>
-        <Button onClick={() => props.showLyricsHandler(props.name)} type='button'>
-            {props.number}. {props.name}
+        <Button onClick={() => showLyricsHandler(name)} type='button'>
+            {number}. {name}
         </Button>
     </Item>
 );

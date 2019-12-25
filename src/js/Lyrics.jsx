@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const lyrics = props => (
+const Lyrics = ({ hideLyricsHandler, name, text }) => (
     <Inner>
-        <Close onClick={() => props.hideLyricsHandler()} type='button'></Close>
-        <Text><Heading>{props.name}</Heading> {props.text ? props.text : 'Instrumental'}</Text>
+        <Close onClick={() => hideLyricsHandler()} type='button'></Close>
+        <Text><Heading>{name}</Heading> {text ? text : 'Instrumental'}</Text>
     </Inner>
 );
 
-export default lyrics;
+export default Lyrics;
 
 const Inner = styled.div`
     display: grid;

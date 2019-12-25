@@ -60,12 +60,10 @@ const App = () => {
     const hideLyricsHandler = () => setAreLyrics(false);
 
     const renderAlbums = () => {
-        const albumsToRender = [];
-
-        albums.forEach((album, index) => {
+        const albumsToRender = albums.map((album, index) => {
             const { name, coverUrl, year, tracks, tracksVisible } = album;
 
-            albumsToRender.push(
+            return (
                 <Album
                     key={index}
                     index={index}
@@ -125,7 +123,7 @@ const App = () => {
             </CoverZoomWrapper>
         </>
     );
-}
+};
 
 export default App;
 
@@ -141,7 +139,7 @@ const GlobalStyle = createGlobalStyle`
         background: #000;
         color: #fff;
     }
-`
+`;
 
 const AlbumList = styled.ul`
     display: grid;

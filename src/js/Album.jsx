@@ -2,37 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import Track from './Track';
 
-const Album = props => {
-    const { name, coverUrl, year, tracks, tracksVisible, index, showTracksHandler, hideTracksHandler, showCoverZoomHandler, showLyricsHandler } = props;
+const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, showTracksHandler, hideTracksHandler, showCoverZoomHandler, showLyricsHandler }) => (
+    <Item>
+        <Title>{name} ({year})</Title>
+        <CoverWrapper>
+            <CoverImg src={coverUrl} alt={`'${name}' album cover`} />
+            <Overlay>
+                {tracksVisible ?
+                    <OverlayItem onClick={() => hideTracksHandler(index)} type='button'>Hide tracks</OverlayItem>
+                :
+                    <OverlayItem onClick={() => showTracksHandler(index)} type='button'>Show tracks</OverlayItem>
+                }
+                <OverlayItem onClick={() => showCoverZoomHandler(index)} type='button'>Zoom cover</OverlayItem>
+            </Overlay>
+        </CoverWrapper>
 
-    return (
-        <Item>
-            <Title>{name} ({year})</Title>
-            <CoverWrapper>
-                <CoverImg src={coverUrl} alt={`'${name}' album cover`} />
-                <Overlay>
-                    {tracksVisible ?
-                        <OverlayItem onClick={() => hideTracksHandler(index)} type='button'>Hide tracks</OverlayItem>
-                        :
-                        <OverlayItem onClick={() => showTracksHandler(index)} type='button'>Show tracks</OverlayItem>
-                    }
-                    <OverlayItem onClick={() => showCoverZoomHandler(index)} type='button'>Zoom cover</OverlayItem>
-                </Overlay>
-            </CoverWrapper>
-
-            <Tracks>
-                {tracksVisible && tracks.map((track, index) => (
-                    <Track
-                        key={parseInt(index, 10)}
-                        number={parseInt(index) + 1}
-                        name={track}
-                        showLyricsHandler={showLyricsHandler}>
-                    </Track>
-                ))}
-            </Tracks>
-        </Item>
-    );
-};
+        <Tracks>
+            {tracksVisible && tracks.map((track, index) => (
+                <Track
+                    key={index}
+                    number={parseInt(index) + 1}
+                    name={track}
+                    showLyricsHandler={showLyricsHandler}>
+                </Track>
+            ))}
+        </Tracks>
+    </Item>
+);
 
 export default Album;
 

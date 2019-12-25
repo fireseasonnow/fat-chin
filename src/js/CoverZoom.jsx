@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const coverZoom = props => (
+const CoverZoom = ({ closeCoverZoomHandler, coverUrl, name }) => (
     <Inner>
-        <Close onClick={() => props.closeCoverZoomHandler()} type='button' />
-        <Img src={props.coverUrl} alt={`'${props.name}' album cover`} />
+        <Close onClick={() => closeCoverZoomHandler()} type='button' />
+        <Img src={coverUrl} alt={`'${name}' album cover`} />
     </Inner>
 );
 
-export default coverZoom;
+export default CoverZoom;
 
 const Inner = styled.div`
     display: grid;
