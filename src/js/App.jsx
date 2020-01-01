@@ -42,7 +42,12 @@ const App = () => {
         setIsCoverZoom(true);
     };
 
-    const showLyricsHandler = name => {
+    const lyricsVisibilityHandler = name => {
+        if (name === undefined) {
+            setAreLyrics(false);
+            return;
+        }
+
         axios.get(`http://lyric-api.herokuapp.com/api/find/Pink%20Floyd/${name}`)
             .then(response => {
                 setLyrics({
@@ -54,8 +59,6 @@ const App = () => {
             })
             .catch(error => console.log(error));
     };
-
-    const hideLyricsHandler = () => setAreLyrics(false);
 
     const renderAlbums = () => {
         const albumsToRender = albums.map((album, index) => {
@@ -72,7 +75,7 @@ const App = () => {
                     tracksVisible={tracksVisible}
                     tracksVisibilityHandler={tracksVisibilityHandler}
                     coverZoomHandler={coverZoomHandler}
-                    showLyricsHandler={showLyricsHandler}
+                    lyricsVisibilityHandler={lyricsVisibilityHandler}
                 />
             );
         });
@@ -97,7 +100,7 @@ const App = () => {
         <Lyrics
             name={name}
             text={text}
-            hideLyricsHandler={hideLyricsHandler}
+            lyricsVisibilityHandler={lyricsVisibilityHandler}
         />
     );
 
@@ -108,7 +111,7 @@ const App = () => {
                 isCoverZoom={isCoverZoom}
                 areLyrics={areLyrics}
             >
-                {renderAlbums()}
+                {albums.length && renderAlbums()}
             </AlbumList>
 
             <CoverZoomWrapper

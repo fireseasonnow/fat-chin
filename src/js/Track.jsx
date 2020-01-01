@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Track = ({ showLyricsHandler, name, number }) => (
+const Track = ({ lyricsVisibilityHandler, name, number }) => (
     <Item>
-        <Button onClick={() => showLyricsHandler(name)} type='button'>
+        <Button onClick={() => lyricsVisibilityHandler(name)} type='button'>
             {number}. {name}
         </Button>
     </Item>

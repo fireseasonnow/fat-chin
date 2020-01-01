@@ -21,7 +21,7 @@ describe('<Lyrics />', () => {
     test('should render lyrics with name and text', () => {
         wrapper.setProps({
             name: 'Hello',
-            text: 'Lorem Ipsum',
+            text: 'Lorem Ipsum'
         });
 
         expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -30,16 +30,7 @@ describe('<Lyrics />', () => {
     test('when lyrics are missing should render lyrics with name and "Instrumental" text', () => {
         wrapper.setProps({
             name: 'Hello',
-            text: '',
-        });
-
-        expect(shallowToJson(wrapper)).toMatchSnapshot();
-    });
-
-    test('when lyrics are missing should render lyrics with name and "Instrumental" text', () => {
-        wrapper.setProps({
-            name: 'Hello',
-            text: '',
+            text: ''
         });
 
         const check = wrapper.find('Lyrics__Text').contains('Instrumental');
@@ -47,15 +38,15 @@ describe('<Lyrics />', () => {
         expect(check).toBeTruthy();
     });
 
-    test('should fire hideLyricsHandler when clicked on a button', () => {
-        const hideLyricsHandler = jest.fn();
+    test('should fire lyricsVisibilityHandler when clicked on a button', () => {
+        const lyricsVisibilityHandler = jest.fn();
 
         wrapper.setProps({
-            hideLyricsHandler,
+            lyricsVisibilityHandler
         });
 
         wrapper.find('Lyrics__Close').simulate('click');
 
-        expect(hideLyricsHandler).toHaveBeenCalled();
+        expect(lyricsVisibilityHandler).toHaveBeenCalled();
     });
 });

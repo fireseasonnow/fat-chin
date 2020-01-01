@@ -15,19 +15,3 @@ exports[`<Lyrics /> should render lyrics with name and text 1`] = `
   </Lyrics__Text>
 </Lyrics__Inner>
 `;
-
-exports[`<Lyrics /> when lyrics are missing should render lyrics with name and "Instrumental" text 1`] = `
-<Lyrics__Inner>
-  <Lyrics__Close
-    onClick={[Function]}
-    type="button"
-  />
-  <Lyrics__Text>
-    <Lyrics__Heading>
-      Hello
-    </Lyrics__Heading>
-     
-    Instrumental
-  </Lyrics__Text>
-</Lyrics__Inner>
-`;

@@ -21,22 +21,22 @@ describe('<Track />', () => {
     test('should render a track with name and number', () => {
         wrapper.setProps({
             number: 1,
-            name: 'Hello',
+            name: 'Hello'
         });
 
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should fire showLyricsHandler when clicked on a button', () => {
-        const showLyricsHandler = jest.fn();
+    test('should fire lyricsVisibilityHandler when clicked on a button', () => {
+        const lyricsVisibilityHandler = jest.fn();
 
         wrapper.setProps({
             name: 'Hello',
-            showLyricsHandler,
+            lyricsVisibilityHandler
         });
 
         wrapper.find('Track__Button').simulate('click');
 
-        expect(showLyricsHandler).toHaveBeenCalledWith('Hello');
+        expect(lyricsVisibilityHandler).toHaveBeenCalledWith('Hello');
     });
 });

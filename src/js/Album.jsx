@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Track from './Track';
 
-const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, tracksVisibilityHandler, coverZoomHandler, showLyricsHandler }) => (
+const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, tracksVisibilityHandler, coverZoomHandler, lyricsVisibilityHandler }) => (
     <Item>
         <Title>{name} ({year})</Title>
         <CoverWrapper>
@@ -19,7 +19,7 @@ const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, tracksVisib
                     key={index}
                     number={parseInt(index) + 1}
                     name={track}
-                    showLyricsHandler={showLyricsHandler}>
+                    lyricsVisibilityHandler={lyricsVisibilityHandler}>
                 </Track>
             ))}
         </Tracks>

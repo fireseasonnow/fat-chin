@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Lyrics = ({ hideLyricsHandler, name, text }) => (
+const Lyrics = ({ lyricsVisibilityHandler, name, text }) => (
     <Inner>
-        <Close onClick={() => hideLyricsHandler()} type='button'></Close>
-        <Text><Heading>{name}</Heading> {text ? text : 'Instrumental'}</Text>
+        <Close onClick={() => lyricsVisibilityHandler()} type='button'></Close>
+        <Text><Heading>{name}</Heading> {text || 'Instrumental'}</Text>
     </Inner>
 );
 
