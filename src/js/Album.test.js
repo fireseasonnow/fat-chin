@@ -57,16 +57,16 @@ describe('<Album />', () => {
         expect(tracksVisibilityHandler).toHaveBeenCalledWith(4);
     });
 
-    test('should fire showCoverZoomHandler when clicked on a zoom button', () => {
-        const showCoverZoomHandler = jest.fn();
+    test('should fire coverZoomHandler when clicked on a zoom button', () => {
+        const coverZoomHandler = jest.fn();
 
         wrapper.setProps({
             index: 3,
-            showCoverZoomHandler
+            coverZoomHandler
         });
 
         wrapper.find('Album__OverlayItem:last-child').simulate('click');
 
-        expect(showCoverZoomHandler).toHaveBeenCalledWith(3);
+        expect(coverZoomHandler).toHaveBeenCalledWith(3);
     });
 });

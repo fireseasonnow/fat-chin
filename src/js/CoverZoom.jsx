@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CoverZoom = ({ closeCoverZoomHandler, coverUrl, name }) => (
+const CoverZoom = ({ coverZoomHandler, coverUrl, name }) => (
     <Inner>
-        <Close onClick={() => closeCoverZoomHandler()} type='button' />
+        <Close onClick={() => coverZoomHandler()} type='button' />
         <Img src={coverUrl} alt={`'${name}' album cover`} />
     </Inner>
 );

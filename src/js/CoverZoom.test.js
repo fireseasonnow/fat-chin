@@ -27,15 +27,15 @@ describe('<CoverZoom />', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should fire closeCoverZoomHandler when clicked on a button', () => {
-        const closeCoverZoomHandler = jest.fn();
+    test('should fire coverZoomHandler when clicked on a button', () => {
+        const coverZoomHandler = jest.fn();
 
         wrapper.setProps({
-            closeCoverZoomHandler
+            coverZoomHandler
         });
 
         wrapper.find('CoverZoom__Close').simulate('click');
 
-        expect(closeCoverZoomHandler).toHaveBeenCalled();
+        expect(coverZoomHandler).toHaveBeenCalled();
     });
 });
