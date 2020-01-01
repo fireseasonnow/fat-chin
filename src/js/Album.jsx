@@ -2,17 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Track from './Track';
 
-const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, showTracksHandler, hideTracksHandler, showCoverZoomHandler, showLyricsHandler }) => (
+const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, tracksVisibilityHandler, showCoverZoomHandler, showLyricsHandler }) => (
     <Item>
         <Title>{name} ({year})</Title>
         <CoverWrapper>
             <CoverImg src={coverUrl} alt={`'${name}' album cover`} />
             <Overlay>
-                {tracksVisible ?
-                    <OverlayItem onClick={() => hideTracksHandler(index)} type='button'>Hide tracks</OverlayItem>
-                :
-                    <OverlayItem onClick={() => showTracksHandler(index)} type='button'>Show tracks</OverlayItem>
-                }
+                <OverlayItem onClick={() => tracksVisibilityHandler(index)} type='button'>{tracksVisible ? 'Hide tracks' : 'Show tracks'}</OverlayItem>
                 <OverlayItem onClick={() => showCoverZoomHandler(index)} type='button'>Zoom cover</OverlayItem>
             </Overlay>
         </CoverWrapper>

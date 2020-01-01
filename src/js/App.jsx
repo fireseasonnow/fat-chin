@@ -20,23 +20,18 @@ const App = () => {
             .catch(error => console.log(error));
     }, []);
 
-    const showTracksHandler = index => {
+    const tracksVisibilityHandler = index => {
         const newAlbums = [...albums];
-        newAlbums[index].tracksVisible = true;
+        newAlbums[index].tracksVisible = !newAlbums[index].tracksVisible;
 
         setAlbums(newAlbums);
-    }
-
-    const hideTracksHandler = index => {
-        const newAlbums = [...albums];
-        newAlbums[index].tracksVisible = false;
-
-        setAlbums(newAlbums);
-    }
+    };
 
     const showCoverZoomHandler = index => {
         const newAlbums = [...albums];
-        newAlbums[index].coverZoom = true;
+        newAlbums.forEach((album, albumIndex) => {
+            album.coverZoom = albumIndex === index;
+        });
 
         setAlbums(newAlbums);
         setIsCoverZoom(true);
@@ -72,8 +67,7 @@ const App = () => {
                     year={year}
                     tracks={tracks}
                     tracksVisible={tracksVisible}
-                    showTracksHandler={showTracksHandler}
-                    hideTracksHandler={hideTracksHandler}
+                    tracksVisibilityHandler={tracksVisibilityHandler}
                     showCoverZoomHandler={showCoverZoomHandler}
                     showLyricsHandler={showLyricsHandler}
                 />
@@ -81,7 +75,7 @@ const App = () => {
         });
 
         return albumsToRender;
-    }
+    };
 
     const renderCoverZoom = () => {
         const albumIndex = albums.findIndex(album => album.coverZoom);
@@ -94,7 +88,7 @@ const App = () => {
                 closeCoverZoomHandler={closeCoverZoomHandler}
             />
         );
-    }
+    };
 
     const renderLyrics = (name, text) => (
         <Lyrics
@@ -102,7 +96,7 @@ const App = () => {
             text={text}
             hideLyricsHandler={hideLyricsHandler}
         />
-    )
+    );
 
     return (
         <>

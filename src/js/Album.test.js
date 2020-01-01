@@ -44,35 +44,17 @@ describe('<Album />', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should fire showTracksHandler when clicked on a tracks button', () => {
-        const showTracksHandler = jest.fn();
+    test('should fire tracksVisiblityHandler when clicked on a tracks button', () => {
+        const tracksVisibilityHandler = jest.fn();
 
         wrapper.setProps({
             index: 4,
-            showTracksHandler
+            tracksVisibilityHandler
         });
 
         wrapper.find('Album__OverlayItem:first-child').simulate('click');
 
-        expect(showTracksHandler).toHaveBeenCalledWith(4);
-    });
-
-    test('should fire hideTracksHandler when clicked on a tracks button', () => {
-        const hideTracksHandler = jest.fn();
-
-        wrapper.setProps({
-            index: 4,
-            hideTracksHandler,
-            tracksVisible: true,
-            tracks: [
-                'blah',
-                'blah-blah'
-            ]
-        });
-
-        wrapper.find('Album__OverlayItem:first-child').simulate('click');
-
-        expect(hideTracksHandler).toHaveBeenCalledWith(4);
+        expect(tracksVisibilityHandler).toHaveBeenCalledWith(4);
     });
 
     test('should fire showCoverZoomHandler when clicked on a zoom button', () => {
