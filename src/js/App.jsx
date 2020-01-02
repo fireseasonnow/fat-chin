@@ -11,58 +11,67 @@ const App = () => {
     const [areLyrics, setAreLyrics] = useState(false);
     const [lyrics, setLyrics] = useState({
         name: '',
-        text: ''
+        text: '',
     });
 
     useEffect(() => {
         axios.get('/json/data.json')
-            .then(response => setAlbums(response.data))
-            .catch(error => console.log(error));
+            .then((response) => setAlbums(response.data))
+            .catch((error) => console.error(error));
     }, []);
 
-    const tracksVisibilityHandler = index => {
+    const tracksVisibilityHandler = (index) => {
         const newAlbums = [...albums];
         newAlbums[index].tracksVisible = !newAlbums[index].tracksVisible;
 
         setAlbums(newAlbums);
     };
 
-    const coverZoomHandler = index => {
+    const coverZoomHandler = (index) => {
         if (index === undefined) {
             setIsCoverZoom(false);
             return;
         }
 
-        const newAlbums = [...albums];
-        newAlbums.forEach((album, albumIndex) => {
-            album.coverZoom = albumIndex === index;
+        const newAlbums = albums.map((album, albumIndex) => {
+            let { coverZoom } = album;
+            coverZoom = albumIndex === index;
+            const newAlbum = { ...album, coverZoom };
+
+            return newAlbum;
         });
 
         setAlbums(newAlbums);
         setIsCoverZoom(true);
     };
 
-    const lyricsVisibilityHandler = name => {
+    const lyricsVisibilityHandler = (name) => {
         if (name === undefined) {
             setAreLyrics(false);
             return;
         }
 
         axios.get(`http://lyric-api.herokuapp.com/api/find/Pink%20Floyd/${name}`)
-            .then(response => {
+            .then((response) => {
                 setLyrics({
-                    name: name,
-                    text: response.data.lyric
+                    name,
+                    text: response.data.lyric,
                 });
 
                 setAreLyrics(true);
             })
-            .catch(error => console.log(error));
+            .catch((error) => console.error(error));
     };
 
     const renderAlbums = () => {
         const albumsToRender = albums.map((album, index) => {
-            const { name, coverUrl, year, tracks, tracksVisible } = album;
+            const {
+                name,
+                coverUrl,
+                year,
+                tracks,
+                tracksVisible,
+            } = album;
 
             return (
                 <Album
@@ -84,7 +93,7 @@ const App = () => {
     };
 
     const renderCoverZoom = () => {
-        const albumIndex = albums.findIndex(album => album.coverZoom);
+        const albumIndex = albums.findIndex((album) => album.coverZoom);
         const { name, coverUrl } = albums[albumIndex];
 
         return (
@@ -96,14 +105,6 @@ const App = () => {
         );
     };
 
-    const renderLyrics = (name, text) => (
-        <Lyrics
-            name={name}
-            text={text}
-            lyricsVisibilityHandler={lyricsVisibilityHandler}
-        />
-    );
-
     return (
         <>
             <GlobalStyle />
@@ -111,7 +112,7 @@ const App = () => {
                 isCoverZoom={isCoverZoom}
                 areLyrics={areLyrics}
             >
-                {albums.length && renderAlbums()}
+                {renderAlbums()}
             </AlbumList>
 
             <CoverZoomWrapper
@@ -119,7 +120,14 @@ const App = () => {
                 areLyrics={areLyrics}
             >
                 {isCoverZoom && renderCoverZoom()}
-                {areLyrics && renderLyrics(lyrics.name, lyrics.text)}
+                {areLyrics
+                    && (
+                        <Lyrics
+                            name={lyrics.name}
+                            text={lyrics.text}
+                            lyricsVisibilityHandler={lyricsVisibilityHandler}
+                        />
+                    )}
             </CoverZoomWrapper>
         </>
     );
@@ -149,14 +157,14 @@ const AlbumList = styled.ul`
     margin: 0 auto;
     padding-left: 0;
 
-    ${props => (props.isCoverZoom || props.areLyrics) && css`
+    ${(props) => (props.isCoverZoom || props.areLyrics) && css`
         max-height: 100vh;
         overflow: hidden;
     `}
 `;
 
 const CoverZoomWrapper = styled.div`
-    ${props => (props.isCoverZoom || props.areLyrics) && css`
+    ${(props) => (props.isCoverZoom || props.areLyrics) && css`
         position: fixed;
         top: 0;
         left: 0;

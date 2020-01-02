@@ -2,9 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import Track from './Track';
 
-const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, tracksVisibilityHandler, coverZoomHandler, lyricsVisibilityHandler }) => (
+const Album = ({
+    name,
+    coverUrl,
+    year,
+    tracks,
+    tracksVisible,
+    index,
+    tracksVisibilityHandler,
+    coverZoomHandler,
+    lyricsVisibilityHandler,
+}) => (
     <Item>
-        <Title>{name} ({year})</Title>
+        <Title>
+            {`${name} (${year})`}
+        </Title>
         <CoverWrapper>
             <CoverImg src={coverUrl} alt={`'${name}' album cover`} />
             <Overlay>
@@ -14,13 +26,13 @@ const Album = ({ name, coverUrl, year, tracks, tracksVisible, index, tracksVisib
         </CoverWrapper>
 
         <Tracks>
-            {tracksVisible && tracks.map((track, index) => (
+            {tracksVisible && tracks.map((track, trackIndex) => (
                 <Track
-                    key={index}
-                    number={parseInt(index) + 1}
+                    key={trackIndex}
+                    number={parseInt(trackIndex, 10) + 1}
                     name={track}
-                    lyricsVisibilityHandler={lyricsVisibilityHandler}>
-                </Track>
+                    lyricsVisibilityHandler={lyricsVisibilityHandler}
+                />
             ))}
         </Tracks>
     </Item>
@@ -86,7 +98,6 @@ const OverlayItem = styled.button`
     cursor: pointer;
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
-    outline: none;
     border: 0;
 
     &:first-child,

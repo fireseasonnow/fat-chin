@@ -38,7 +38,7 @@ describe('<Album />', () => {
             tracks: [
                 'blah',
                 'blah-blah'
-            ]
+            ],
         });
 
         expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -49,7 +49,7 @@ describe('<Album />', () => {
 
         wrapper.setProps({
             index: 4,
-            tracksVisibilityHandler
+            tracksVisibilityHandler,
         });
 
         wrapper.find('Album__OverlayItem:first-child').simulate('click');
@@ -62,7 +62,7 @@ describe('<Album />', () => {
 
         wrapper.setProps({
             index: 3,
-            coverZoomHandler
+            coverZoomHandler,
         });
 
         wrapper.find('Album__OverlayItem:last-child').simulate('click');

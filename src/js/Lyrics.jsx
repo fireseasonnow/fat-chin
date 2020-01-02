@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Lyrics = ({ lyricsVisibilityHandler, name, text }) => (
+const Lyrics = ({
+    lyricsVisibilityHandler,
+    name,
+    text,
+}) => (
     <Inner>
-        <Close onClick={() => lyricsVisibilityHandler()} type='button'></Close>
-        <Text><Heading>{name}</Heading> {text || 'Instrumental'}</Text>
+        <Close onClick={() => lyricsVisibilityHandler()} type='button' />
+        <Text>
+            <Heading>{name}</Heading>
+            {text || 'Instrumental'}
+        </Text>
     </Inner>
 );
 
@@ -29,7 +36,6 @@ const Close = styled.button`
     left: -15px;
     width: 40px;
     height: 40px;
-    outline: 0;
     padding-right: 28px;
 
     &:hover {

@@ -31,7 +31,7 @@ describe('<CoverZoom />', () => {
         const coverZoomHandler = jest.fn();
 
         wrapper.setProps({
-            coverZoomHandler
+            coverZoomHandler,
         });
 
         wrapper.find('CoverZoom__Close').simulate('click');

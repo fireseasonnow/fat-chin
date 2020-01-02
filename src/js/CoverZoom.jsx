@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CoverZoom = ({ coverZoomHandler, coverUrl, name }) => (
+const CoverZoom = ({
+    coverZoomHandler,
+    coverUrl,
+    name,
+}) => (
     <Inner>
         <Close onClick={() => coverZoomHandler()} type='button' />
         <Img src={coverUrl} alt={`'${name}' album cover`} />
@@ -26,7 +30,6 @@ const Close = styled.button`
     left: -15px;
     width: 40px;
     height: 40px;
-    outline: 0;
     padding-right: 28px;
 
     &:hover {

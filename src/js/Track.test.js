@@ -21,7 +21,7 @@ describe('<Track />', () => {
     test('should render a track with name and number', () => {
         wrapper.setProps({
             number: 1,
-            name: 'Hello'
+            name: 'Hello',
         });
 
         expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe('<Track />', () => {
 
         wrapper.setProps({
             name: 'Hello',
-            lyricsVisibilityHandler
+            lyricsVisibilityHandler,
         });
 
         wrapper.find('Track__Button').simulate('click');

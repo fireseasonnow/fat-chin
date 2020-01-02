@@ -3,10 +3,7 @@
 exports[`<Album /> should render an album with tracks and 'Hide tracks' text 1`] = `
 <Album__Item>
   <Album__Title>
-    Hello
-     (
-    1984
-    )
+    Hello (1984)
   </Album__Title>
   <Album__CoverWrapper>
     <Album__CoverImg
@@ -46,10 +43,7 @@ exports[`<Album /> should render an album with tracks and 'Hide tracks' text 1`]
 exports[`<Album /> should render an album without tracks and 'Show tracks' text 1`] = `
 <Album__Item>
   <Album__Title>
-    Hello
-     (
-    1984
-    )
+    Hello (1984)
   </Album__Title>
   <Album__CoverWrapper>
     <Album__CoverImg

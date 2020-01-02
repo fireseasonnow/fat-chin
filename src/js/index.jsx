@@ -3,9 +3,9 @@ import { render } from 'react-dom';
 import App from './App';
 
 function renderApp() {
-    render (
+    render(
         <App />,
-        document.getElementById('root'),
+        document.getElementById('root')
     );
 }
 

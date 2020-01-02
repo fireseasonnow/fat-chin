@@ -21,7 +21,7 @@ describe('<Lyrics />', () => {
     test('should render lyrics with name and text', () => {
         wrapper.setProps({
             name: 'Hello',
-            text: 'Lorem Ipsum'
+            text: 'Lorem Ipsum',
         });
 
         expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('<Lyrics />', () => {
     test('when lyrics are missing should render lyrics with name and "Instrumental" text', () => {
         wrapper.setProps({
             name: 'Hello',
-            text: ''
+            text: '',
         });
 
         const check = wrapper.find('Lyrics__Text').contains('Instrumental');
@@ -42,7 +42,7 @@ describe('<Lyrics />', () => {
         const lyricsVisibilityHandler = jest.fn();
 
         wrapper.setProps({
-            lyricsVisibilityHandler
+            lyricsVisibilityHandler,
         });
 
         wrapper.find('Lyrics__Close').simulate('click');

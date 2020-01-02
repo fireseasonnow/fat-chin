@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Track = ({ lyricsVisibilityHandler, name, number }) => (
+const Track = ({
+    lyricsVisibilityHandler,
+    name,
+    number,
+}) => (
     <Item>
         <Button onClick={() => lyricsVisibilityHandler(name)} type='button'>
-            {number}. {name}
+            {`${number}. ${name}`}
         </Button>
     </Item>
 );
@@ -33,6 +37,5 @@ const Button = styled.button`
     border: 0;
     padding: 0;
     cursor: inherit;
-    outline: none;
     text-align: left;
 `;

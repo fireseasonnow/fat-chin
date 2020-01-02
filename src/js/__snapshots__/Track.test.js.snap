@@ -6,9 +6,7 @@ exports[`<Track /> should render a track with name and number 1`] = `
     onClick={[Function]}
     type="button"
   >
-    1
-    . 
-    Hello
+    1. Hello
   </Track__Button>
 </Track__Item>
 `;

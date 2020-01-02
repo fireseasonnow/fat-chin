@@ -10,7 +10,6 @@ exports[`<Lyrics /> should render lyrics with name and text 1`] = `
     <Lyrics__Heading>
       Hello
     </Lyrics__Heading>
-     
     Lorem Ipsum
   </Lyrics__Text>
 </Lyrics__Inner>
