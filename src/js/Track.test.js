@@ -14,11 +14,11 @@ describe('<Track />', () => {
         wrapper = shallow(<Track />);
     });
 
-    test('should render without crashing', () => {
+    it('should render without crashing', () => {
         expect(wrapper).toBeTruthy();
     });
 
-    test('should render a track with name and number', () => {
+    it('should render a track with name and number', () => {
         wrapper.setProps({
             number: 1,
             name: 'Hello',
@@ -27,7 +27,7 @@ describe('<Track />', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should fire lyricsVisibilityHandler when clicked on a button', () => {
+    it('should fire lyricsVisibilityHandler when clicked on a button', () => {
         const lyricsVisibilityHandler = jest.fn();
 
         wrapper.setProps({

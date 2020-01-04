@@ -14,11 +14,11 @@ describe('<CoverZoom />', () => {
         wrapper = shallow(<CoverZoom />);
     });
 
-    test('should render without crashing', () => {
+    it('should render without crashing', () => {
         expect(wrapper).toBeTruthy();
     });
 
-    test('should render a cover zoom with name and coverUrl', () => {
+    it('should render a cover zoom with name and coverUrl', () => {
         wrapper.setProps({
             name: 'Hello',
             coverUrl: 'url',
@@ -27,7 +27,7 @@ describe('<CoverZoom />', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should fire coverZoomHandler when clicked on a button', () => {
+    it('should fire coverZoomHandler when clicked on a button', () => {
         const coverZoomHandler = jest.fn();
 
         wrapper.setProps({

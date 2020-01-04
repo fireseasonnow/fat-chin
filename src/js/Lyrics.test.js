@@ -14,11 +14,11 @@ describe('<Lyrics />', () => {
         wrapper = shallow(<Lyrics />);
     });
 
-    test('should render without crashing', () => {
+    it('should render without crashing', () => {
         expect(wrapper).toBeTruthy();
     });
 
-    test('should render lyrics with name and text', () => {
+    it('should render lyrics with name and text', () => {
         wrapper.setProps({
             name: 'Hello',
             text: 'Lorem Ipsum',
@@ -27,7 +27,7 @@ describe('<Lyrics />', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('when lyrics are missing should render lyrics with name and "Instrumental" text', () => {
+    it('when lyrics are missing should render lyrics with name and "Instrumental" text', () => {
         wrapper.setProps({
             name: 'Hello',
             text: '',
@@ -38,7 +38,7 @@ describe('<Lyrics />', () => {
         expect(check).toBeTruthy();
     });
 
-    test('should fire lyricsVisibilityHandler when clicked on a button', () => {
+    it('should fire lyricsVisibilityHandler when clicked on a button', () => {
         const lyricsVisibilityHandler = jest.fn();
 
         wrapper.setProps({

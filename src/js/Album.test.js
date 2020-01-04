@@ -14,11 +14,11 @@ describe('<Album />', () => {
         wrapper = shallow(<Album />);
     });
 
-    test('should render without crashing', () => {
+    it('should render without crashing', () => {
         expect(wrapper).toBeTruthy();
     });
 
-    test('should render an album without tracks and \'Show tracks\' text', () => {
+    it('should render an album without tracks and \'Show tracks\' text', () => {
         wrapper.setProps({
             name: 'Hello',
             coverUrl: 'url',
@@ -29,7 +29,7 @@ describe('<Album />', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should render an album with tracks and \'Hide tracks\' text', () => {
+    it('should render an album with tracks and \'Hide tracks\' text', () => {
         wrapper.setProps({
             name: 'Hello',
             coverUrl: 'url',
@@ -44,7 +44,7 @@ describe('<Album />', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    test('should fire tracksVisiblityHandler when clicked on a tracks button', () => {
+    it('should fire tracksVisiblityHandler when clicked on a tracks button', () => {
         const tracksVisibilityHandler = jest.fn();
 
         wrapper.setProps({
@@ -57,7 +57,7 @@ describe('<Album />', () => {
         expect(tracksVisibilityHandler).toHaveBeenCalledWith(4);
     });
 
-    test('should fire coverZoomHandler when clicked on a zoom button', () => {
+    it('should fire coverZoomHandler when clicked on a zoom button', () => {
         const coverZoomHandler = jest.fn();
 
         wrapper.setProps({
