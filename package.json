@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Pink Floyd discography in React flavor",
   "scripts": {
-    "start": "npx webpack-dev-server",
-    "build": "rm -rf dist && npx webpack",
-    "test": "npx jest",
-    "eslint": "npx eslint ./src/js",
-    "eslint-fix": "npx eslint ./src/js --fix",
+    "start": "webpack-dev-server",
+    "build": "rm -rf dist && webpack",
+    "test": "jest",
+    "eslint": "eslint ./src/js",
+    "eslint-fix": "eslint ./src/js --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -52,10 +52,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "react-test-renderer": "^16.12.0",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^4.0.0-beta.2",
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
